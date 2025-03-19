@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+  margin-right: 20px;
+  position: absolute;
+  left: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  flex-wrap: wrap; /* Позволяет элементам обтекать друг друга */
+}
+
+.slider {
+  flex: 1;
+  position: relative;
+  max-width: 600px;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+  .content {
+      flex-direction: column; /* Ставим элементы в столбик на маленьких экранах */
+  }
+
+  .slider {
+      margin-right: 0;
+      margin-bottom: 20px; /* Добавляем отступ снизу для слайдера */
+  }
+
+  nav ul li {
+      margin: 0 10px; /* Уменьшаем отступы в меню */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+      flex-direction: column; /* Меню и логотип в столбик */
+      align-items: flex-start; /* Выравниваем по левому краю */
+  }
+
+  .logo img {
+      margin-bottom: 10px; /* Отступ между логотипом и меню */
+  }
+
+  nav ul {
+      flex-direction: column; /* Меню в столбик */
+      align-items: flex-start; /* Выравниваем по левому краю */
+  }
+
+  nav ul li {
+      margin: 5px 0; /* Уменьшаем отступы между пунктами меню */
+  }
+
+  .text {
+      padding: 10px; /* Уменьшаем отступы в текстовом блоке */
+  }
+}
